@@ -6,12 +6,14 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Millise arvuni numbrid välja prindin?");
+        System.out.print("Mitu numbrit kokku liidan alates number ühest?");
+        int summa = 0;
         int algne = 1;
         int arv = Integer.parseInt(scanner.nextLine());
         while (algne <= arv) {
-            System.out.println(algne);
+            summa += algne;
             algne++;
         }
+        System.out.println("Summa on " + summa);
     }
 }

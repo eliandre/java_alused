@@ -4,19 +4,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
-
-        int sum = 0;
-        while(true){
-            System.out.print("Sisesta summa: ");
-            int input = Integer.parseInt(scanner.nextLine());
-            if(input == 0) {
-                break;
-            }
-            sum += input;
-            System.out.println("Summa on hetkel " + sum);
+        int arv = 2;
+        while(arv <= 100) {
+            System.out.println(arv);
+            arv = arv + 2;
         }
-
-        System.out.println("Summa on kokku " + sum);
     }
 }

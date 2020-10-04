@@ -4,24 +4,16 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
+        String parool = "eesel";
 
-        System.out.print("Sisesta aastaarv: ");
-        int aastaarv = Integer.parseInt(scanner.nextLine());
-
-        if(aastaarv % 4 == 0){
-            if(aastaarv % 100 == 0) {
-                if(aastaarv % 400 == 0) {
-                    System.out.println("Tegu on liigaastaga.");
-                } else {
-                    System.out.println("Tegu pole liigaastaga.");
-                }
+        while(true) {
+            System.out.print("Sisesta parool: ");
+            String sisend = scanner.nextLine();
+            if(sisend.equals(parool)){
+                System.out.println("Õige parool!");
+                System.out.println("Salasõna on yjdka sadd");
+                break;
             }
-            else {
-                System.out.println("Tegu on liigaastaga.");
-            }
-        }
-        else {
-            System.out.println("Tegu pole liigaastaga.");
         }
     }
 }

@@ -5,14 +5,26 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Sisesta arv: ");
-        int arv = Integer.parseInt(scanner.nextLine());
+        System.out.print("Sisesta punktisumma (0-60): ");
+        int punktid = Integer.parseInt(scanner.nextLine());
 
-        if(arv % 2 == 0) {
-            System.out.println("Arv on paaris.");
+        if(punktid < 30) {
+            System.out.println("Läbikukkumine.");
+        }
+        else if(punktid < 35) {
+            System.out.println("Hinne: 1.");
+        }
+        else if(punktid < 40) {
+            System.out.println("Hinne: 2.");
+        }
+        else if(punktid < 45) {
+            System.out.println("Hinne: 3.");
+        }
+        else if(punktid < 50) {
+            System.out.println("Hinne: 4.");
         }
         else {
-            System.out.println("Arv on paaritu.");
+            System.out.println("Hinne: 5.");
         }
     }
 }

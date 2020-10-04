@@ -5,9 +5,17 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Sisesta ringi raadius: ");
-        int raadius = Integer.parseInt(scanner.nextLine());
+        System.out.println("Sisesta arv: ");
+        int arv = Integer.parseInt(scanner.nextLine());
 
-        System.out.println("Ringi ümbermõõt on " + 2 * Math.PI * raadius);
+        if(arv > 0) {
+            System.out.println("Arv on positiivne.");
+        }
+        else if(arv == 0) {
+            System.out.println("Arv on 0.");
+        }
+        else {
+            System.out.println("Arv on negatiivne");
+        }
     }
 }

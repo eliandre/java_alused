@@ -1,15 +1,17 @@
+import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
 
-        int paevad = 365;
-        int tunnid = 24;
-        int minutid = 60;
-        int sekundid = 60;
-        int sekundidAastas = paevad*tunnid*minutid*sekundid;
+        Scanner reader = new Scanner(System.in);
 
-        System.out.println("Aastas on " + sekundidAastas + " sekundit.");
+        System.out.print("Sisesta esimene arv: ");
+        int esimene = Integer.parseInt(reader.nextLine());
+        System.out.print("Sisesta teine arv: ");
+        int teine = Integer.parseInt(reader.nextLine());
+
+        double jagatis = (double)esimene / teine;
+
+        System.out.println("Jagamine: " + esimene + " / " + teine + " = " + jagatis);
     }
-
 }

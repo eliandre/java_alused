@@ -5,26 +5,14 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Sisesta punktisumma (0-60): ");
-        int punktid = Integer.parseInt(scanner.nextLine());
+        System.out.println("Sisesta oma vanus: ");
+        int vanus = Integer.parseInt(scanner.nextLine());
 
-        if(punktid < 30) {
-            System.out.println("Läbikukkumine.");
-        }
-        else if(punktid < 35) {
-            System.out.println("Hinne: 1.");
-        }
-        else if(punktid < 40) {
-            System.out.println("Hinne: 2.");
-        }
-        else if(punktid < 45) {
-            System.out.println("Hinne: 3.");
-        }
-        else if(punktid < 50) {
-            System.out.println("Hinne: 4.");
+        if(vanus > 0 && vanus < 120) {
+            System.out.println("Hea teada.");
         }
         else {
-            System.out.println("Hinne: 5.");
+            System.out.println("Võimatu!");
         }
     }
 }

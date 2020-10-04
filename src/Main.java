@@ -8,14 +8,11 @@ public class Main {
         System.out.println("Sisesta arv: ");
         int arv = Integer.parseInt(scanner.nextLine());
 
-        if(arv > 0) {
-            System.out.println("Arv on positiivne.");
-        }
-        else if(arv == 0) {
-            System.out.println("Arv on 0.");
+        if(arv % 2 == 0) {
+            System.out.println("Arv on paaris.");
         }
         else {
-            System.out.println("Arv on negatiivne");
+            System.out.println("Arv on paaritu.");
         }
     }
 }

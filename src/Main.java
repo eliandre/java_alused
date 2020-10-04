@@ -1,50 +1,29 @@
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        printStars(3);
-        printStars(5);
-        printStars(9);
-        System.out.println();
-        printSquare(6);
-        System.out.println();
-        printRectangle(17, 3);
-        System.out.println();
-        printTriangle(4);
-    }
 
-    public static void printStars(int kogus) {
-        int i = 0;
-        while (i < kogus) {
-            System.out.print("*");
-            i++;
-        }
-        System.out.println();
-    }
+        Scanner scanner = new Scanner(System.in);
+        int juhuslik = (int) Math.round(Math.random() * 100);
+        int korrad = 1;
 
-    public static void printSquare(int kyljePikkus) {
-        int i = 0;
-        while (i < kyljePikkus) {
-            printStars(kyljePikkus);
-            i++;
+        while (true) {
+            System.out.print("Arva arv ära: ");
+            int arv = Integer.parseInt(scanner.nextLine());
+            if (juhuslik < arv) {
+                System.out.println("Arv on väiksem. Arvatud kordi: " + korrad);
+                korrad++;
+            }
+            else if (juhuslik > arv) {
+                System.out.println("Arv on suurem. Arvatud kordi: " + korrad);
+                korrad++;
+            }
+            else {
+                System.out.println("Tubli! Arvasidki ära.");
+                break;
+            }
         }
-    }
 
-    public static void printRectangle(int laius, int korgus) {
-        int i = 0;
-        while (i < korgus) {
-            printStars(laius);
-            i++;
-        }
-    }
-
-    public static void printTriangle(int suurus) {
-        int i = 0;
-        int y = 1;
-        while (i < suurus) {
-            printStars(y);
-            i++;
-            y++;
-        }
     }
 }

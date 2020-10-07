@@ -5,16 +5,11 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Sisesta oma nimi: ");
+        System.out.print("Sisesta sõna: ");
         String sisend = scanner.nextLine();
+        System.out.print("Sisesta sõnaosa pikkus: ");
+        int pikkus = Integer.parseInt(scanner.nextLine());
 
-        if (sisend.length() > 2) {
-            System.out.println("1. täht on " + sisend.charAt(0));
-            System.out.println("2. täht on " + sisend.charAt(1));
-            System.out.println("3. täht on " + sisend.charAt(2));
-        }
-        else {
-            System.out.println();
-        }
+        System.out.println("Tulemus: " + sisend.substring(0, pikkus));
     }
 }

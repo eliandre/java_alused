@@ -1,22 +1,28 @@
-import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class Main {
     public static void main(String[] args) {
 
-        ArrayList<String> sonad = new ArrayList<String>();
-        sonad.add("Hallo");
-        sonad.add("Hello");
-        sonad.add("Ciao");
-        sonad.add("Tere");
-        System.out.println("Nimekirjas on");
-        System.out.println(sonad);
-        removeLast(sonad);
-        System.out.println(sonad);
+        ArrayList<Integer> arvud = new ArrayList<Integer>();
+
+        arvud.add(3);
+        arvud.add(2);
+        arvud.add(7);
+        arvud.add(2);
+        System.out.println("Summa on: " + sum(arvud));
+        System.out.println("Keskmine on: " + average(arvud));
     }
 
-    public static void removeLast(ArrayList<String> list) {
-        list.remove(list.size() - 1);
+    public static int sum(ArrayList<Integer> list) {
+        int i = 0;
+        for (int arv : list) {
+            i += arv;
+        }
+        return i;
+    }
+
+    public static double average(ArrayList<Integer> list) {
+        double keskmine= (double) sum(list) / list.size();
+        return keskmine;
     }
 }

@@ -9,14 +9,14 @@ public class Main {
         sonad.add("Hallo");
         sonad.add("Hello");
         sonad.add("Ciao");
-        System.out.println("Nimekirjas on " + countItems(sonad) + " elementi.");
+        sonad.add("Tere");
+        System.out.println("Nimekirjas on");
+        System.out.println(sonad);
+        removeLast(sonad);
+        System.out.println(sonad);
     }
 
-    public static int countItems(ArrayList<String> list) {
-        int i = 0;
-        for (String items : list) {
-            i++;
-        }
-        return i;
+    public static void removeLast(ArrayList<String> list) {
+        list.remove(list.size() - 1);
     }
 }

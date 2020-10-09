@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Main {
     public static void main(String[] args) {
@@ -8,16 +9,20 @@ public class Main {
 
         ArrayList<String> sonad = new ArrayList<String>();
 
-        while(true){
+        while(true) {
             System.out.print("Sisesta sõna: ");
             String sona = scanner.nextLine();
-            if(!sonad.contains(sona)) {
-                sonad.add(sona);
-            }
-            else {
-                System.out.println("Sa trükkisid sõna " + sona + " kaks korda.");
+            if(sona.isEmpty()){
                 break;
             }
+            sonad.add(sona);
+        }
+
+        Collections.sort(sonad);
+
+        System.out.println("Sa sisestasid sõnad: ");
+        for(String sona : sonad){
+            System.out.println(sona);
         }
     }
 }

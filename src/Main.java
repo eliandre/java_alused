@@ -9,20 +9,16 @@ public class Main {
         arvud.add(2);
         arvud.add(7);
         arvud.add(2);
-        System.out.println("Summa on: " + sum(arvud));
-        System.out.println("Keskmine on: " + average(arvud));
+        System.out.println("Suurim arv on: " + greatest(arvud));
     }
 
-    public static int sum(ArrayList<Integer> list) {
-        int i = 0;
-        for (int arv : list) {
-            i += arv;
+    public static int greatest(ArrayList<Integer> list) {
+        int suurim = 0;
+        for( int number : list){
+            if(number > suurim){
+                suurim = number;
+            }
         }
-        return i;
-    }
-
-    public static double average(ArrayList<Integer> list) {
-        double keskmine= (double) sum(list) / list.size();
-        return keskmine;
+        return suurim;
     }
 }

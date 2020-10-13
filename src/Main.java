@@ -1,24 +1,37 @@
-import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        ArrayList<Integer> arvud = new ArrayList<Integer>();
+        Scanner scanner = new Scanner(System.in);
 
-        arvud.add(3);
-        arvud.add(2);
-        arvud.add(7);
-        arvud.add(2);
-        System.out.println("Suurim arv on: " + greatest(arvud));
+        System.out.print("Sisesta sõna: ");
+        String tekst = scanner.nextLine();
+        if(palindrome(tekst)) {
+            System.out.println("Sõna on palindroom.");
+        }
+        else {
+            System.out.println("Sõna pole palindroom.");
+        }
+
     }
 
-    public static int greatest(ArrayList<Integer> list) {
-        int suurim = 0;
-        for( int number : list){
-            if(number > suurim){
-                suurim = number;
-            }
+    public static boolean palindrome(String tekst) {
+        String abi = "";
+        boolean tulemus = false;
+        int x = 0;
+        int pikkus = tekst.length();
+        int algnePikkus = tekst.length();
+
+        while (x < algnePikkus) {
+            char taht = tekst.charAt(pikkus - 1);
+            abi += taht;
+            x++;
+            pikkus--;
         }
-        return suurim;
+        if(tekst.equals(abi)){
+            tulemus = true;
+        }
+        return tulemus;
     }
 }

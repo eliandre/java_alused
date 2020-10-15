@@ -1,37 +1,24 @@
-import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
+        ArrayList<Integer> list1 = new ArrayList<Integer>();
+        ArrayList<Integer> list2 = new ArrayList<Integer>();
 
-        System.out.print("Sisesta sõna: ");
-        String tekst = scanner.nextLine();
-        if(palindrome(tekst)) {
-            System.out.println("Sõna on palindroom.");
-        }
-        else {
-            System.out.println("Sõna pole palindroom.");
-        }
+        list1.add(4);
+        list1.add(3);
 
+        list2.add(5);
+        list2.add(10);
+        list2.add(7);
+
+        combine(list1, list2);
+        System.out.println(list1);
+        System.out.println(list2);
     }
 
-    public static boolean palindrome(String tekst) {
-        String abi = "";
-        boolean tulemus = false;
-        int x = 0;
-        int pikkus = tekst.length();
-        int algnePikkus = tekst.length();
-
-        while (x < algnePikkus) {
-            char taht = tekst.charAt(pikkus - 1);
-            abi += taht;
-            x++;
-            pikkus--;
-        }
-        if(tekst.equals(abi)){
-            tulemus = true;
-        }
-        return tulemus;
+    public static void combine(ArrayList<Integer> first, ArrayList<Integer> second) {
+        first.addAll(second);
     }
 }

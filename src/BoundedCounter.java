@@ -4,10 +4,11 @@ public class BoundedCounter {
 
     public BoundedCounter(int upperLimit) {
         this.upperLimit = upperLimit;
+        this.value = 0;
     }
 
     public void next() {
-        if(this.value < upperLimit) {
+        if(this.value < this.upperLimit) {
             this.value++;
         }
         else {
@@ -17,6 +18,10 @@ public class BoundedCounter {
 
     public int getValue() {
         return this.value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
     }
 
     public String toString() {

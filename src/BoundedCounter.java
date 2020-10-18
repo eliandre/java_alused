@@ -15,12 +15,16 @@ public class BoundedCounter {
         }
     }
 
+    public int getValue() {
+        return this.value;
+    }
+
     public String toString() {
         if(this.value < 10) {
-            return "Väärtus: 0" + this.value;
+            return "0" + this.value;
         }
         else {
-            return "Väärtus: " + this.value;
+            return "" + this.value;
         }
     }
 }

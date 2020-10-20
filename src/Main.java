@@ -1,12 +1,16 @@
 public class Main {
     public static void main(String[] args) {
 
-        PasswordRandomizer randomizer = new PasswordRandomizer(50);
+        Counter uus = new Counter(2, false);
 
-        System.out.println("Parool: " + randomizer.createPassword());
-        System.out.println("Parool: " + randomizer.createPassword());
-        System.out.println("Parool: " + randomizer.createPassword());
-        System.out.println("Parool: " + randomizer.createPassword());
+        System.out.println(uus.value());
+        uus.decrease();
+        uus.decrease();
+        System.out.println(uus.value());
+        uus.increase(10);
+        System.out.println(uus.value());
 
+        uus.decrease(11);
+        System.out.println(uus.value());
     }
 }

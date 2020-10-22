@@ -48,6 +48,11 @@ public class CashRegister {
         return false;
     }
 
+    public void loadMoneyToCard(LyyraCard card, double sum) {
+        card.loadMoney(sum);
+        this.cashInRegister += sum;
+    }
+
     public String toString() {
         return "Raha on kassas " + cashInRegister + ", ökonoomseid lõunaid on müüdud " + economicalSold +
                 ", gurmeelõunaid on müüdud " + gourmetSold;

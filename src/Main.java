@@ -2,18 +2,21 @@ public class Main {
     public static void main(String[] args) {
 
         CashRegister unicafeExactum = new CashRegister();
+        System.out.println(unicafeExactum);
 
-        double theChange = unicafeExactum.payEconimical(10);
-        System.out.println("Raha tagastati " + theChange);
+        LyyraCard cardOfJim = new LyyraCard(2);
 
-        LyyraCard cardOfJim = new LyyraCard(7);
+        System.out.println("Kaardil on raha " + cardOfJim.balance() + " eurot.");
 
         boolean succeeded = unicafeExactum.payGourmet(cardOfJim);
         System.out.println("Makse õnnestus: " + succeeded);
+
+        unicafeExactum.loadMoneyToCard(cardOfJim, 100);
+
         succeeded = unicafeExactum.payGourmet(cardOfJim);
         System.out.println("Makse õnnestus: " + succeeded);
-        succeeded = unicafeExactum.payEconimical(cardOfJim);
-        System.out.println("Makse õnnestus: " + succeeded);
+
+        System.out.println("Kaardil on raha " + cardOfJim.balance() + " eurot.");
 
         System.out.println(unicafeExactum);
     }

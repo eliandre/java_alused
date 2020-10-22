@@ -21,5 +21,16 @@ public class Main {
         for(Student student : list) {
             System.out.println(student);
         }
+
+        System.out.print("Sisesta otsingusõne: ");
+        String sone = scanner.nextLine();
+        System.out.println("Tulemused:");
+
+        for(Student student : list) {
+            if(student.getName().contains(sone)) {
+                System.out.println(student);
+            }
+        }
+
     }
 }

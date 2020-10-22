@@ -2,32 +2,25 @@ public class LyyraCard {
 
     private double balance;
 
-    public LyyraCard(double balanceAtStart) {
-        this.balance = balanceAtStart;
+    public LyyraCard(double balance) {
+        this.balance = balance;
     }
 
-    public String toString() {
-        return "Kaardil on " + this.balance + " eurot.";
-    }
-
-    public void payEconomical() {
-        if(this.balance > 2.50) {
-            this.balance -= 2.50;
-        }
-    }
-
-    public void payGourmet() {
-        if(this.balance > 4) {
-            this.balance -= 4;
-        }
+    public double balance() {
+        return this.balance;
     }
 
     public void loadMoney(double amount) {
-        if(amount > 0) {
-            this.balance += amount;
-            if(this.balance > 150){
-                this.balance = 150;
-            }
+        this.balance += amount;
+    }
+
+    public boolean pay(double amount) {
+        if(this.balance < amount) {
+            return false;
+        }
+        else {
+            this.balance -= amount;
+            return true;
         }
     }
 }

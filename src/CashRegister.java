@@ -28,6 +28,26 @@ public class CashRegister {
         else return cashGiven;
     }
 
+    public boolean payEconimical(LyyraCard card) {
+        double economicalPrice = 2.50;
+        if(card.balance() >= economicalPrice) {
+            card.pay(economicalPrice);
+            this.economicalSold++;
+            return true;
+        }
+        return false;
+    }
+
+    public boolean payGourmet(LyyraCard card) {
+        double guormetPrice = 4.00;
+        if(card.balance() >= guormetPrice) {
+            card.pay(guormetPrice);
+            this.gourmetSold++;
+            return true;
+        }
+        return false;
+    }
+
     public String toString() {
         return "Raha on kassas " + cashInRegister + ", ökonoomseid lõunaid on müüdud " + economicalSold +
                 ", gurmeelõunaid on müüdud " + gourmetSold;

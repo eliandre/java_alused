@@ -1,23 +1,17 @@
 public class Main {
     public static void main(String[] args) {
 
-        CashRegister unicafeExactum = new CashRegister();
-        System.out.println(unicafeExactum);
+        Apartment studioManhattan = new Apartment(1, 16, 5500);
+        Apartment twoRoomsBrooklyn = new Apartment(2, 38, 4200);
+        Apartment fourAndKitchenBronx = new Apartment(3, 78, 2500);
 
-        LyyraCard cardOfJim = new LyyraCard(2);
+        System.out.println(studioManhattan.larger(twoRoomsBrooklyn));
+        System.out.println(fourAndKitchenBronx.larger(twoRoomsBrooklyn));
 
-        System.out.println("Kaardil on raha " + cardOfJim.balance() + " eurot.");
+        System.out.println(studioManhattan.priceDifference(twoRoomsBrooklyn));
+        System.out.println(fourAndKitchenBronx.priceDifference(twoRoomsBrooklyn));
 
-        boolean succeeded = unicafeExactum.payGourmet(cardOfJim);
-        System.out.println("Makse õnnestus: " + succeeded);
-
-        unicafeExactum.loadMoneyToCard(cardOfJim, 100);
-
-        succeeded = unicafeExactum.payGourmet(cardOfJim);
-        System.out.println("Makse õnnestus: " + succeeded);
-
-        System.out.println("Kaardil on raha " + cardOfJim.balance() + " eurot.");
-
-        System.out.println(unicafeExactum);
+        System.out.println(studioManhattan.moreExpensiveThan(twoRoomsBrooklyn));
+        System.out.println(fourAndKitchenBronx.moreExpensiveThan(twoRoomsBrooklyn));
     }
 }

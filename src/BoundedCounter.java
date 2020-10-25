@@ -2,9 +2,9 @@ public class BoundedCounter {
     private int value;
     private int upperLimit;
 
-    public BoundedCounter(int upperLimit) {
-        this.upperLimit = upperLimit;
-        this.value = 0;
+    public BoundedCounter(int startValue) {
+        this.upperLimit = 59;
+        this.value = startValue;
     }
 
     public void next() {
@@ -17,10 +17,12 @@ public class BoundedCounter {
     }
 
     public int getValue() {
+
         return this.value;
     }
 
     public void setValue(int value) {
+
         this.value = value;
     }
 

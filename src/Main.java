@@ -1,35 +1,13 @@
-import java.util.ArrayList;
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
 
-        ArrayList<Student> list = new ArrayList<Student>();
-        Scanner scanner = new Scanner(System.in);
+        Clock clock = new Clock(23, 59, 50);
 
-        while(true) {
-            System.out.print("Nimi: ");
-            String name = scanner.nextLine();
-            if(name.equals("")) {
-                break;
-            }
-            System.out.print("Õpilase number: ");
-            String number = scanner.nextLine();
-            list.add(new Student(name, number));
-
-        }
-        for(Student student : list) {
-            System.out.println(student);
-        }
-
-        System.out.print("Sisesta otsingusõne: ");
-        String sone = scanner.nextLine();
-        System.out.println("Tulemused:");
-
-        for(Student student : list) {
-            if(student.getName().contains(sone)) {
-                System.out.println(student);
-            }
+        int i = 0;
+        while (i < 20) {
+            System.out.println(clock);
+            clock.tick();
+            i++;
         }
 
     }

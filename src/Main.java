@@ -1,11 +1,16 @@
 public class Main {
     public static void main(String[] args) {
 
-        Person pekka = new Person("Pekka", 15, 2, 1993);
-        Person steve = new Person("Thomas", 1,3, 1955);
+        int[] array = {5, 1, 3, 4, 2};
+        printElegantly(array);
+    }
 
-        System.out.println(steve.getName() + " vanus on " + steve.age() + " aastat.");
-        System.out.println(pekka.getName() + " vanus on " + pekka.age() + " aastat.");
-
+    public static void printElegantly(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            if(i < array.length - 1) {
+                System.out.print(array[i] + ", ");
+            }
+            else System.out.print(array[i] + "");
+        }
     }
 }

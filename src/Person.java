@@ -23,6 +23,13 @@ public class Person {
     }
 
     public String toString() {
-        return this.name +", born "+ this.birthday;
+        return this.name +", sündinud "+ this.birthday;
+    }
+
+    public boolean olderThan(Person compared) {
+        if(this.age() > compared.age()) {
+            return true;
+        }
+        else return false;
     }
 }

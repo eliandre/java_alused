@@ -1,15 +1,49 @@
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
 
-        NightSky NightSky = new NightSky(8, 4);
+        Book cheese = new Book("Cheese problems solved", "Woodhead Publishing", 2007);
 
-        NightSky.print();
-        System.out.println("Tähtede arv: " + NightSky.starsInLastPrint());
-        System.out.println();
+        System.out.println(cheese.title());
+        System.out.println(cheese.publisher());
+        System.out.println(cheese.year());
+        System.out.println(cheese);
 
-        NightSky.print();
-        System.out.println("Tähtede arv: " + NightSky.starsInLastPrint());
+        Library Library = new Library();
 
+        Library.addBook(cheese);
+        Book nhl = new Book("NHL Hockey", "Stanley Kupp", 1952);
+        Library.addBook(nhl);
+        Library.addBook(new Book("Battle Axes", "Tom A. Hawk", 1851));
+
+        Library.printBooks();
+
+        Library.addBook(new Book("The Stinky Cheese Man and Other Fairly Stupid Tales", "Penguin Group", 1992));
+
+        ArrayList<Book> result = Library.searchByTitle("Cheese");
+        for(Book book : result) {
+            System.out.println(book);
+        }
+
+        System.out.println("---");
+        for(Book book : Library.searchByPublisher("Penguin Group  ")) {
+            System.out.println(book);
+        }
+
+        System.out.println("---");
+        for(Book book : Library.searchByYear(1851)) {
+            System.out.println(book);
+        }
+
+        System.out.println("- - - - - -");
+        for(Book book : Library.searchByTitle("CHEESE")) {
+            System.out.println(book);
+        }
+
+        System.out.println("---");
+        for(Book book : Library.searchByPublisher("PENGUIN  ")) {
+            System.out.println(book);
+        }
     }
 }

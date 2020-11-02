@@ -9,6 +9,6 @@ public class Main {
         people.put("mikael", "mixu");
         people.put("arto", "arppa");
 
-        System.out.println(people.get("matti"));
+        System.out.println("Matti hüüdnimi on " + people.get("matti"));
     }
 }

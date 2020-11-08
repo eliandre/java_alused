@@ -1,14 +1,31 @@
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        HashMap<String, String> people = new HashMap<String, String>();
+        Dictionary dictionary = new Dictionary();
 
-        people.put("matti", "mage");
-        people.put("mikael", "mixu");
-        people.put("arto", "arppa");
+        dictionary.add("ahv", "monkey");
+        dictionary.add("banaan", "banana");
+        dictionary.add("klavessiiv", "harpsichord");
 
-        System.out.println("Matti hüüdnimi on " + people.get("matti"));
+        System.out.println(dictionary.translate("ahv"));
+        System.out.println(dictionary.translate("lammas"));
+        System.out.println(dictionary.amountOfWords());
+
+        dictionary.add("aken", "window");
+        System.out.println(dictionary.amountOfWords());
+
+        ArrayList<String> translations = dictionary.translationLists();
+        for (String translation : translations) {
+            System.out.println(translation);
+        }
+
+        Scanner scanner = new Scanner(System.in);
+        Dictionary dict = new Dictionary();
+
+        TextUserInterface ui = new TextUserInterface(scanner, dict);
+        ui.start();
     }
 }

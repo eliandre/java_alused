@@ -1,31 +1,30 @@
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
 
-        Dictionary dictionary = new Dictionary();
+        RegistrationPlate reg1 = new RegistrationPlate("FI", "ABS-123");
+        RegistrationPlate reg2 = new RegistrationPlate("FI", "UXE-465");
+        RegistrationPlate reg3 = new RegistrationPlate("D", "B WG-431");
 
-        dictionary.add("ahv", "monkey");
-        dictionary.add("banaan", "banana");
-        dictionary.add("klavessiiv", "harpsichord");
+        ArrayList<RegistrationPlate> finnish = new ArrayList<RegistrationPlate>();
+        finnish.add(reg1);
+        finnish.add(reg2);
 
-        System.out.println(dictionary.translate("ahv"));
-        System.out.println(dictionary.translate("lammas"));
-        System.out.println(dictionary.amountOfWords());
-
-        dictionary.add("aken", "window");
-        System.out.println(dictionary.amountOfWords());
-
-        ArrayList<String> translations = dictionary.translationLists();
-        for (String translation : translations) {
-            System.out.println(translation);
+        RegistrationPlate first = new RegistrationPlate("FI", "ABC-123");
+        if(!finnish.contains(first)) {
+            finnish.add(first);
         }
 
-        Scanner scanner = new Scanner(System.in);
-        Dictionary dict = new Dictionary();
+        System.out.println("Soome: " + finnish);
 
-        TextUserInterface ui = new TextUserInterface(scanner, dict);
-        ui.start();
+        HashMap<RegistrationPlate, String> owners = new HashMap<RegistrationPlate, String>();
+        owners.put(reg1, "Arto");
+        owners.put(reg3, "Jürgen");
+
+        System.out.println("Omanikud: ");
+        System.out.println(owners.get(new RegistrationPlate("FI", "ABC-123")));
+        System.out.println(owners.get(new RegistrationPlate("D", "B WQ-321")));
     }
 }

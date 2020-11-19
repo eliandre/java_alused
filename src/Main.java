@@ -28,5 +28,12 @@ public class Main {
         box.add(cd3);
 
         System.out.println(box);
+
+        Box box1 = new Box(20);
+        box1.add(new Raamat("Oskar Luts", "Kevade", 2));
+        box1.add(new Raamat("Lev Tolstoi", "Sõda ja rahu", 7));
+        System.out.println(box1);
+        box1.add(box);
+        System.out.println(box1);
     }
 }

@@ -2,16 +2,11 @@
 public class Main {
     public static void main(String[] args) {
 
-        Storehouse store = new Storehouse();
+        Purchase purchase = new Purchase("piim", 4, 2);
 
-        store.addProduct("piim", 3, 10);
-        store.addProduct("kohv", 5, 6);
-        store.addProduct("pett", 2, 20);
-        store.addProduct("jogurt", 2, 30);
-
-        System.out.println("Tooted:");
-        for(String product : store.products()) {
-            System.out.println(product);
-        }
+        System.out.println("Nelja piima kogusumma on " + purchase.price());
+        System.out.println(purchase);
+        purchase.increaseAmount();
+        System.out.println(purchase);
     }
 }

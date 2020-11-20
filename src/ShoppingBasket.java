@@ -25,4 +25,10 @@ public class ShoppingBasket {
         }
         return summa;
     }
+
+    public void print() {
+        for(Purchase p : this.ostud.values()) {
+            System.out.println(p);
+        }
+    }
 }

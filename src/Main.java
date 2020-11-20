@@ -16,5 +16,7 @@ public class Main {
         System.out.println("Ostukorvi hind: " + basket.price());
         basket.add("Arvuti", 899);
         System.out.println("Ostukorvi hind: " + basket.price());
+        System.out.println("Ostukorvis on: ");
+        basket.print();
     }
 }

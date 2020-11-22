@@ -8,6 +8,7 @@ public class Main {
         hand.add(new Card(12, Card.HEARTS));
         hand.add(new Card(2, Card.CLUBS));
 
+        hand.sort();
         hand.print();
     }
 }

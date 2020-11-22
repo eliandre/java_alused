@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Hand {
 
@@ -6,6 +7,10 @@ public class Hand {
 
     public void add(Card card) {
         this.hand.add(card);
+    }
+
+    public void sort() {
+        Collections.sort(hand);
     }
 
     public void print() {

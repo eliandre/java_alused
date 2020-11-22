@@ -13,6 +13,10 @@ public class Hand implements Comparable<Hand> {
         Collections.sort(hand);
     }
 
+    public void sortAgainstSuit() {
+        this.hand.sort(new SortAgainstSuitAndValue());
+    }
+
     @Override
     public int compareTo(Hand hand) {
         return this.cardsValue() - hand.cardsValue();

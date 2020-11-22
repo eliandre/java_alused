@@ -4,19 +4,16 @@ import java.util.Collections;
 public class Main {
     public static void main(String[] args) {
 
-        ArrayList<Card> cards = new ArrayList<Card>();
+        Hand hand = new Hand();
 
-        cards.add(new Card(3, Card.CLUBS));
-        cards.add(new Card(2, Card.DIAMONDS));
-        cards.add(new Card(14, Card.CLUBS));
-        cards.add(new Card(12, Card.HEARTS));
-        cards.add(new Card(2, Card.CLUBS));
+        hand.add( new Card(12, Card.HEARTS) );
+        hand.add( new Card(4, Card.CLUBS) );
+        hand.add( new Card(2, Card.DIAMONDS) );
+        hand.add( new Card(14, Card.CLUBS) );
+        hand.add( new Card(7, Card.HEARTS) );
+        hand.add( new Card(2, Card.CLUBS) );
 
-        SortAgainstSuitAndValue suitSorter = new SortAgainstSuitAndValue();
-        Collections.sort(cards, suitSorter);
-
-        for(Card c : cards) {
-            System.out.println(c);
-        }
+        hand.sortAgainstSuit();
+        hand.print();
     }
 }

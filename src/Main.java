@@ -7,9 +7,6 @@ public class Main {
     public static void main(String[] args) {
 
         Sensor kumpula = new Thermometer();
-        kumpula.on();
-        System.out.println("Temperatuur Kumpulas on " + kumpula.measure() + " kraadi.");
-
         Sensor kaisaniemi = new Thermometer();
         Sensor helsinkiVantaa = new Thermometer();
 
@@ -20,5 +17,9 @@ public class Main {
 
         helsinkiArea.on();
         System.out.println("Temperatuur Helsinki piirkonnas on " + helsinkiArea.measure() + " kraadi.");
+        System.out.println("Temperatuur Helsinki piirkonnas on " + helsinkiArea.measure() + " kraadi.");
+        System.out.println("Temperatuur Helsinki piirkonnas on " + helsinkiArea.measure() + " kraadi.");
+
+        System.out.println("Näidud: " + helsinkiArea.readings());
     }
 }

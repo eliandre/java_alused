@@ -1,29 +1,16 @@
-import moving.domain.Item;
-import moving.domain.Thing;
-import moving.logic.Packer;
-import moving.domain.Box;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import application.ConstantSensor;
 
 public class Main {
     public static void main(String[] args) {
 
-        List<Thing> things = new ArrayList<Thing>();
-        things.add(new Item("pass", 2));
-        things.add(new Item("hambahari", 1));
-        things.add(new Item("raamat", 4));
-        things.add(new Item("ketassaag", 8));
+        ConstantSensor ten = new ConstantSensor(10);
+        ConstantSensor minusFive = new ConstantSensor(-5);
 
-        Packer packer = new Packer(10);
+        System.out.println(ten.measure());
+        System.out.println(minusFive.measure());
 
-        List<Box> boxes = packer.packThings(things);
-
-        System.out.println("Kastide arv: " + boxes.size());
-
-        for(Box box : boxes) {
-            System.out.println("  asjade maht kastis: " + box.getVolume() + " dm^3");
-        }
+        System.out.println(ten.isOn());
+        ten.off();
+        System.out.println(ten.isOn());
     }
 }

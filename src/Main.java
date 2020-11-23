@@ -1,4 +1,5 @@
 import application.ConstantSensor;
+import application.Thermometer;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,5 +13,9 @@ public class Main {
         System.out.println(ten.isOn());
         ten.off();
         System.out.println(ten.isOn());
+
+        Thermometer termo = new Thermometer();
+        termo.isOn();
+        System.out.println(termo.measure());
     }
 }

@@ -2,8 +2,14 @@ package application;
 
 public class Thermometer implements Sensor {
 
+    private boolean state;
+
+    public Thermometer() {
+        this.state = true;
+    }
+
     public boolean isOn() {
-        return false;
+        return this.state;
     }
 
     public int measure() {

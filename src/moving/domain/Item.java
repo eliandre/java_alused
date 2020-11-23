@@ -1,6 +1,6 @@
 package moving.domain;
 
-public class Item implements Thing {
+public class Item implements Thing, Comparable<Item> {
 
     private String name;
     private int volume;
@@ -16,6 +16,10 @@ public class Item implements Thing {
 
     public String getName() {
         return this.name;
+    }
+
+    public int compareTo(Item item) {
+        return this.getVolume() - item.getVolume();
     }
 
     public String toString() {

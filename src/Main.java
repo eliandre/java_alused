@@ -1,5 +1,4 @@
 import application.AverageSensor;
-import application.ConstantSensor;
 import application.Sensor;
 import application.Thermometer;
 

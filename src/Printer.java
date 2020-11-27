@@ -16,6 +16,7 @@ public class Printer {
                 System.out.println(line);
             }
         }
+
         while(reader.hasNextLine()) {
             String line = reader.nextLine();
             if(line.contains(word)) {

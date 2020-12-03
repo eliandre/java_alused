@@ -1,14 +1,26 @@
+import tools.DuplicateRemover;
+import tools.PersonalDuplicateRemover;
 
 public class Main {
     public static void main(String[] args) throws Exception {
 
-        Printer printer = new Printer("src/textfile.txt");
+        DuplicateRemover remover = new PersonalDuplicateRemover();
+        remover.add("first");
+        remover.add("second");
+        remover.add("first");
 
-        printer.printLinesWhichContain("Väinämöinen");
-        System.out.println("-----");
-        printer.printLinesWhichContain("Frank Zappa");
-        System.out.println("-----");
-        printer.printLinesWhichContain("");
-        System.out.println("-----");
+        System.out.println("Praegune duplikaatide arv: " + remover.getNumberOfDetectedDuplicates());
+
+        remover.add("last");
+        remover.add("last");
+        remover.add("new");
+
+        System.out.println("Praegune duplikaatide arv: " + remover.getNumberOfDetectedDuplicates());
+        System.out.println("Unikaalsed sõned: " + remover.getUniqueCharacterStrings());
+
+        remover.empty();
+
+        System.out.println("Praegune duplikaatide arv: " + remover.getNumberOfDetectedDuplicates());
+        System.out.println("Unikaalsed sõned: " + remover.getUniqueCharacterStrings());
     }
 }

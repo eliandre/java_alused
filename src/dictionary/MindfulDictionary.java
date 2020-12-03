@@ -17,8 +17,8 @@ public class MindfulDictionary {
             this.estEng.put(word, translation);
         }
 
-        if(!this.engEst.containsKey(word)) {
-            this.engEst.put(word, translation);
+        if(!this.engEst.containsKey(translation)) {
+            this.engEst.put(translation, word);
         }
     }
 
@@ -32,5 +32,19 @@ public class MindfulDictionary {
         }
 
         return null;
+    }
+
+    public void remove(String word) {
+        if(this.estEng.containsKey(word)) {
+            String translation = this.estEng.get(word);
+            this.estEng.remove(word);
+            this.engEst.remove(translation);
+        }
+
+        if(this.engEst.containsKey(word)) {
+            String translation = this.engEst.get(word);
+            this.engEst.remove(word);
+            this.estEng.remove(translation);
+        }
     }
 }

@@ -1,3 +1,4 @@
-ahv:monkey
 allpool:below
+piim:milk
 õlu:beer
+ahv:monkey

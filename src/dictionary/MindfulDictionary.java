@@ -1,8 +1,6 @@
 package dictionary;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -11,6 +9,7 @@ public class MindfulDictionary {
     private HashMap<String, String> estEng;
     private HashMap<String, String> engEst;
     private File file;
+    private Writer writer;
 
     public MindfulDictionary() {
         this.estEng = new HashMap<>();
@@ -72,6 +71,20 @@ public class MindfulDictionary {
         }
 
         catch (FileNotFoundException e) {
+            return false;
+        }
+    }
+
+    public boolean save() {
+        try {
+            writer = new FileWriter(this.file);
+            for(String key : this.estEng.keySet()) {
+                writer.write(key + ":" + this.estEng.get(key) + "\n");
+            }
+            writer.close();
+            return true;
+        }
+        catch (IOException e) {
             return false;
         }
     }

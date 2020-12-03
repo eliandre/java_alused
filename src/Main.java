@@ -1,17 +1,13 @@
-import dictionary.MindfulDictionary;
+import movable.Organism;
 
 public class Main {
     public static void main(String[] args)  throws Exception {
 
-        MindfulDictionary dict = new MindfulDictionary("src/words.txt");
-        dict.load();
-
-        dict.add("piim", "milk");
-        dict.save();
-
-        System.out.println(dict.translate("ahv"));
-        System.out.println(dict.translate("programmeerimine"));
-        System.out.println(dict.translate("allpool"));
-        System.out.println(dict.translate("piim"));
+        Organism organism = new Organism(20, 30);
+        System.out.println(organism);
+        organism.move(-10, 5);
+        System.out.println(organism);
+        organism.move(50, 20);
+        System.out.println(organism);
     }
 }
